@@ -11,6 +11,17 @@ You are a recognised pest controller in your hometown. When the local lord asks 
 ## Technologies used
 - Unity
 - C#
+
+## Programming features
+- State Pattern
+- Object pooling
+- Unity New Input System
+- Custom-built enemy AI aided with 2DNavMeshPlus
+- Event-driven architecture to keep the code decoupled
+
+## Platforms
+- PC
+- Mobile
   
  ## Links
  
