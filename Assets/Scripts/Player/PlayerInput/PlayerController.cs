@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         playerControls.Actions.Movement.performed += UpdatePlayerDirection;
         playerControls.Actions.Movement.canceled += UpdatePlayerDirection;
         playerControls.Actions.Attack.started += OnAttackPressed;
-        playerControls.Actions.DisplayHealthbar.started += OnDisplayHealthbarPressed;
+        playerControls.Actions.DisplayHealthbar.started += OnDisplayUIPressed;
         playerControls.Actions.StartPause.started += OnStartPause;
 
         playerControls.Pause.StopPause.started += OnStopPause;
@@ -51,9 +51,9 @@ public class PlayerController : MonoBehaviour
         PlayerEventManager.RaisePlayerAttack();
     }
 
-    private void OnDisplayHealthbarPressed(InputAction.CallbackContext context)
+    private void OnDisplayUIPressed(InputAction.CallbackContext context)
     {
-        PlayerEventManager.RaiseDisplayPlayerHealthbar();
+        PlayerEventManager.RaiseDisplayUI();
     }
 
     private void OnCloseOpeningTextButton(InputAction.CallbackContext context)
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         playerControls.Actions.Movement.performed -= UpdatePlayerDirection;
         playerControls.Actions.Movement.canceled -= UpdatePlayerDirection;
         playerControls.Actions.Attack.started -= OnAttackPressed;
-        playerControls.Actions.DisplayHealthbar.started -= OnDisplayHealthbarPressed;
+        playerControls.Actions.DisplayHealthbar.started -= OnDisplayUIPressed;
         playerControls.Actions.StartPause.started -= OnStartPause;
 
         playerControls.Pause.StopPause.started -= OnStopPause;

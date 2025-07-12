@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
        
         CurrentHealth -= damage;
 
-        healthbar.UpdateHealthBar(CurrentHealth, maxHealth, 1);   //usar evento
+        healthbar.UpdateHealthBar(CurrentHealth, maxHealth, 1);   
 
         isAlive = CurrentHealth > 0;
 
@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
         CurrentHealth += healingPoints;
         CurrentHealth = Mathf.Clamp(CurrentHealth, 0, maxHealth);
 
-        healthbar.UpdateHealthBar(CurrentHealth, maxHealth, 1);   //usar evento
+        healthbar.UpdateHealthBar(CurrentHealth, maxHealth, 1);   
     }
 
     public void ResetIsDamaged()

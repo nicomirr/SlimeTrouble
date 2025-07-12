@@ -14,13 +14,13 @@ public class PlayerDamagedState : PlayerAnimationsBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
-        if (player.PlayerKnockback.KnockingBack) return;
-
-        if(player.PlayerHealth.CurrentHealth <= 0)
+        if (player.PlayerHealth.CurrentHealth <= 0)
         {
             player.SwitchState(player.DyingState);
             return;
         }
+
+        if (player.PlayerKnockback.KnockingBack) return;
 
         if(player.PlayerMover.PlayerDirection != Vector2.zero)
         {

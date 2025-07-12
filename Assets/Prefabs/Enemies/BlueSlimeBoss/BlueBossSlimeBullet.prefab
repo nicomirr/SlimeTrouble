@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2dd68b61b3ce24d8784adbde7dfb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBossBullet: 1
   knockbackStrength: 3
   obstacleLayer:
     serializedVersion: 2

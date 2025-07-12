@@ -22,7 +22,7 @@ public static class PlayerEventManager
     public static event Action<Vector2> OnPlayerMovement;
 
     //Se dispara con metodo en PlayerInput, escucha Healthbar
-    public static event Action OnPlayerDisplayHealthbar;
+    public static event Action OnPlayerDisplayUI;
 
     //Se dispara con metodo en Healthbar, escucha HPFullText
     public static event Action OnDisplayHPFullText;
@@ -84,9 +84,9 @@ public static class PlayerEventManager
         OnPlayerDamaged?.Invoke();
     }
 
-    public static void RaiseDisplayPlayerHealthbar()
+    public static void RaiseDisplayUI()
     {
-        OnPlayerDisplayHealthbar?.Invoke();
+        OnPlayerDisplayUI?.Invoke();
     }
 
     public static void RaiseDisplayHPFullText()

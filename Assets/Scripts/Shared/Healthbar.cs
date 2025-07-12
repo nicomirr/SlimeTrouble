@@ -16,17 +16,13 @@ public class Healthbar : MonoBehaviour
     private float visibilityTimer;
     private bool visible;
 
-
-    private void Awake()
-    {
-        if(isPlayerHealthbar)
-            PlayerEventManager.OnPlayerDisplayHealthbar += DisplayHealthBar;
-    }
-
+    
     private void Start()
     {
         ToggleHealthbarVisibility(0);
         healthbar.transform.localScale = new Vector3(maxWidth, healthbar.transform.localScale.y, healthbar.transform.localScale.z);
+
+        visible = false;
     }
 
     private void Update()
@@ -34,19 +30,17 @@ public class Healthbar : MonoBehaviour
         if (!visible) return;
 
         VisibilityTimer();
+
     } 
 
     private void VisibilityTimer()
     {
         visibilityTimer += Time.deltaTime;
         if (visibilityTimer >= visibilityTime)
+        {
             ToggleHealthbarVisibility(0);
-    }
-
-    private void DisplayHealthBar()
-    {
-        visible = true;
-        ToggleHealthbarVisibility(1);
+            visible = false;
+        }
     }
 
     public void UpdateHealthBar(int currentHealth, int maxHealth, int visibility)
@@ -69,18 +63,11 @@ public class Healthbar : MonoBehaviour
     {
         visibilityTimer = 0;
 
-        Color healthInvisibleColor = new Color(healthbar.color.r, healthbar.color.g, healthbar.color.b, alpha);
-        healthbar.color = healthInvisibleColor;
+        Color healthbarColor = new Color(healthbar.color.r, healthbar.color.g, healthbar.color.b, alpha);
+        healthbar.color = healthbarColor;
 
-        Color emptyBarInvisibleColor = new Color(emptyHealthbar.color.r, emptyHealthbar.color.g, emptyHealthbar.color.b, alpha);
-        emptyHealthbar.color = emptyBarInvisibleColor;
+        Color emptyBarColor = new Color(emptyHealthbar.color.r, emptyHealthbar.color.g, emptyHealthbar.color.b, alpha);
+        emptyHealthbar.color = emptyBarColor;
     }
-
-    private void OnDestroy()
-    {
-        if (isPlayerHealthbar)
-            PlayerEventManager.OnPlayerDisplayHealthbar -= DisplayHealthBar;
-    }
-
 
 }

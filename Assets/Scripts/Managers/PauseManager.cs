@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject goToMainMenuScreen;
     [SerializeField] private GameObject instructionsScreen;
+    [SerializeField] private GameObject mobileGameplayInput;
 
     [SerializeField] private GameObject pauseOptions;
 
@@ -48,6 +49,9 @@ public class PauseManager : MonoBehaviour
 
         PlayerController.playerControls.Pause.Enable();
 
+        if (Application.isMobilePlatform)
+            mobileGameplayInput.SetActive(false);
+
         IsPaused = true;
         pauseScreen.SetActive(true);
         Time.timeScale = 0f;
@@ -62,6 +66,9 @@ public class PauseManager : MonoBehaviour
 
         PlayerController.playerControls.Actions.Enable();
         PlayerController.playerControls.Pause.Disable();
+
+        if (Application.isMobilePlatform)
+            mobileGameplayInput.SetActive(true);
 
         IsPaused = false;
         pauseScreen.SetActive(false);

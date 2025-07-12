@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    [SerializeField] private bool isBossBullet;
+    public bool IsBossBullet => isBossBullet;
+
     [SerializeField] private float knockbackStrength = 3f;
     [SerializeField] private LayerMask obstacleLayer;
     [SerializeField] private float lifeTime = 5;

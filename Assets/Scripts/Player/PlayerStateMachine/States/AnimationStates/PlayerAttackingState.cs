@@ -17,6 +17,12 @@ public class PlayerAttackingState : PlayerAnimationsBaseState
 
     public override void UpdateState(PlayerStateManager player)
     {
+        if (player.PlayerHealth.CurrentHealth <= 0)
+        {
+            player.SwitchState(player.DyingState);
+            return;
+        }
+
         if (player.PlayerAttacker.IsAttacking) return;
 
         player.PlayerMover.enabled = true;
