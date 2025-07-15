@@ -13,6 +13,7 @@ You are a recognised pest controller in your hometown. When the local lord asks 
 - C#
 
 ## Programming features
+- Observer Pattern
 - State Pattern
 - Object pooling
 - Unity New Input System
