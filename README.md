@@ -26,4 +26,4 @@ You are a recognised pest controller in your hometown. When the local lord asks 
   
  ## Links
  
- Download it from itch.io: https://nicomironoff.itch.io/slime-trouble
+ Try it at itch.io: https://nicomironoff.itch.io/slime-trouble
